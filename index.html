@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	    <form>
+    		<h1>5431 Scouting App</h1>
+    		<h2>Match Info</h2>
+    		Station: <select id="station"required="true" autofocus="true">
+    		    <option value="????"selected="selected" disabled="true">Select station</option>
+    		    <option value="red1">Red 1 (left)</option>
+    		    <option value="red2">Red 2 (center)</option>
+    		    <option value="red3">Red 3 (right)</option>
+    		    <option value="blue1">Blue 1 (left)</option>
+    		    <option value="blue2">Blue 2 (center)</option>
+    		    <option value="blue3">Blue 3 (right)</option>
+    		</select>
+    		Team Number: <input type="number" id="team-number" required="true" min="1" max="7000">
+    		Match Number: <input type="number" id="match-number" required="true" min="1" max="200">
+    		Match type: <select id="match-type"required="true">
+    		    <option value="????"selected="selected" disabled="true">Select type</option>
+    		    <option value="practice">Practice Match</option>
+    		    <option value="qual">Qualifications Match</option>
+    		    <option value="quarterfinal">Quarterfinals/Playoffs Match</option>
+    		    <option value="semifinal">Semifinals Match</option>
+    		    <option value="finals">Finals Match</option>
+    		</select>
+    		<h2>Autonomous</h2>
+    		Placed gear: <input id="auton-gear-placed"type="checkbox">
+    		Dropped gear: <input id="auton-gear-dropped"type="checkbox">
+    		
+    		Dropped hopper: <input id="auton-hopper-dropped"type="checkbox">
+    		Balls shot: <input id="auton-balls-shot"type="number"min="0"max="200"value="0">
+    		
+    		<h2>Teleoperated</h2>
+    		Gears collected from floor: <input id="gears-from-floor" type="number" min="0" max="20" value="0">
+    		Gears collected from HP station: <input id="gear-from-hp" type="number" min="0" max="20" value="0">
+            <br>    		
+    		Gears dropped by bot: <input id="gears-dropped-bot" type="number" min="0" max="20" value="0">
+    		Gears dropped by pilots: <input id="gears-dropped-pilots" type="number" min="0" max="20" value="0">
+    		Gears succesfully delivered: <input id="gears-delivered" type="number" min="0" max="20" value="0">
+    		<br>
+            Hoppers dropped: <input id="balls-hoppers-dropped" type="number" min="0" max="8" value="0">
+            Balls from floor: <input id="balls-from-floor" type="checkbox">
+            Balls from HP: <input id="balls-from-hp" type="checkbox">
+            <br>
+            Low goal approx. KPA: <input id="balls-lowgoal-kpa"type="number"min="0"max="60"value="0">
+            High goal approx. KPA: <input id="balls-highgoal-kpa"type="number"min="0"max="60"value="0">
+            <br>
+            Played defense: <input id="defense-played"type="checkbox">
+            How well does it play defense (Academy scale:) <input id="defense-play-rating" type="number" min="0" max="10"value="0">
+            How well does it react to defense (Academy scale:) <input id="defense-react-rating" type="number" min="0" max="10"value="0">
+            <br>
+            Did it climb? <select id="climbed">
+                <option selected="true"value="did not attempt">Did not attempt</option>
+                <option value="failed">Did not climb but tryed to</option>
+                <option value="did but fouled">Did but fouled</option>
+                <option value="did">Succesfully climbed</option>
+            </select>
+            <h2>Extra notes</h2>
+            <input id="notes"type="text">
+            <br>
+    		<input type="submit"value="Submit">
+		</form>
+	</body>
+	<script>
+	    function onSubmit(){
+	        console.log("hi");
+	    }
+	</script>
+</html>
