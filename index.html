@@ -114,7 +114,7 @@
 	        output += $("#robot-station").val();
 	        output += ",";
 	        output += $("#auton").val();
-            output += ",";
+          	output += ",";
 	        output += $("#auton-gears").val();
 	        output += ",";
 	        output += $("#auton-balls-shot").val();
@@ -147,7 +147,7 @@
 	        output += ",";
 	        output += encodeURIComponent($("#notes").val());
 	        
-	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString(), output);
+	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString() + ".csv", output);
 	    }
 	</script>
 </html>
