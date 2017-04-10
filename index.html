@@ -8,73 +8,85 @@
 	<body>
 	    <form onsubmit="onSubmit()">
     		<h1>5431 Scouting App</h1>
-    		<h2>Match Info</h2>
-    		Team Number: <input type="number" id="team-number" required="true" min="1" max="7000" autofocus="true">
-    		Match Number: <input type="number" id="match-number" required="true" min="1" max="200">
-    		Robot Start: <select id="robot-station"required="true">
-    		    <option value=""selected="selected" disabled="true">Select station</option>
-    		    <option value="Red 1">Red 1 (left)</option>
-    		    <option value="Red 2">Red 2 (center)</option>
-    		    <option value="Red 3">Red 3 (right)</option>
-    		    <option value="Blue 1">Blue 1 (left)</option>
-    		    <option value="Blue 2">Blue 2 (center)</option>
-    		    <option value="Blue 3">Blue 3 (right)</option>
-    		</select>
-    		Driver Station: <select id="driver-station"required="true">
-    		    <option value=""selected="selected" disabled="true">Select station</option>
-    		    <option value="Red 1">Red 1 (left)</option>
-    		    <option value="Red 2">Red 2 (center)</option>
-    		    <option value="Red 3">Red 3 (right)</option>
-    		    <option value="Blue 1">Blue 1 (left)</option>
-    		    <option value="Blue 2">Blue 2 (center)</option>
-    		    <option value="Blue 3">Blue 3 (right)</option>
-    		</select>
-    		<h2>Autonomous</h2>
-    		Autonomous: <select id="auton"required="true">
-    		    <option value=""selected="selected" disabled="true">Select auton</option>
-    		    <option value="Nothing">Nothing</option>
-    		    <option value="Gears">Gears</option>
-    		    <option value="Baseline">Baseline</option>
-    		    <option value="Fuel">Fuel</option>
-
-    		</select>
-    		Gears placed: <input id="auton-gears"type="number"min="0"max="2"value="0">
-    		
-    		Balls shot: <input id="auton-balls-shot"type="number"min="0"max="400"value="0">
-    		Fuel percentage: <input id="auton-balls-percent"type="number"min="0"max="100"value="0">
-    		
-    		<h2>Teleoperated</h2>
-    		Gears collected from floor: <input id="gears-from-floor" type="number" min="0" max="20" value="0">
-    		Gears collected from HP station: <input id="gears-from-hp" type="number" min="0" max="20" value="0">
-            <br>    		
-    		Gears dropped by bot: <input id="gears-dropped-bot" type="number" min="0" max="20" value="0">
-    		Gears dropped by pilots: <input id="gears-dropped-pilot" type="number" min="0" max="20" value="0">
-    		Gears succesfully delivered: <input id="gears-delivered" type="number" min="0" max="20" value="0">
-    		<br>
-    		Fuel shot: <input id="teleop-balls-shot"type="number"min="0"max="400"value="0">
-    		Fuel percentage: <input id="teleop-balls-percent"type="number"min="0"max="100"value="0">
-            <br>
-            How well does it play defense (Academy scale:) <input id="defense-play-rating" type="number" min="0" max="4"value="0">
-            How well does it react to defense (Academy scale:) <input id="defense-react-rating" type="number" min="0" max="4"value="0">
-            <br>
-            Did it climb? <select id="climbed">
-                <option selected="true"value="Did not attempt">Did not attempt</option>
-                <option value="Failed">Did not climb but tryed to</option>
-                <option value="Did but fouled">Did but fouled</option>
-                <option value="Did succesfully">Succesfully climbed</option>
-            </select>
-            If so, how fast? Leave 0 for didnt climb: <input id="climb-time"type="number"min="0"max="30"value="0">
-            <br>
-            Primary focus: <select id="focus" required="true">
-                <option value=""disabled="true"selected="true"></option>
-                <option value="Fuel">Fuel</option>
-                <option value="Gears">Gears</option>
-                <option value="Defense">Defense</option>
-                <option value="Puck bot">Puck bot</option>
-                <option value="Broke down">Broke down</option>
-            </select>
-            <h2>Comments</h2>
-            <input id="notes"type="text">
+    		<fieldset>
+    			<legend>Match Info</legend>
+	    		Team Number: <input type="number" id="team-number" required="true" min="1" max="7000" autofocus="true">
+	    		Match Number: <input type="number" id="match-number" required="true" min="1" max="200">
+	    		Robot Start: <select id="robot-station"required="true">
+	    		    <option value=""selected="selected" disabled="true">Select station</option>
+	    		    <option value="Red 1">Red 1 (left)</option>
+	    		    <option value="Red 2">Red 2 (center)</option>
+	    		    <option value="Red 3">Red 3 (right)</option>
+	    		    <option value="Blue 1">Blue 1 (left)</option>
+	    		    <option value="Blue 2">Blue 2 (center)</option>
+	    		    <option value="Blue 3">Blue 3 (right)</option>
+	    		</select>
+	    		Driver Station: <select id="driver-station"required="true">
+	    		    <option value=""selected="selected" disabled="true">Select station</option>
+	    		    <option value="Red 1">Red 1 (left)</option>
+	    		    <option value="Red 2">Red 2 (center)</option>
+	    		    <option value="Red 3">Red 3 (right)</option>
+	    		    <option value="Blue 1">Blue 1 (left)</option>
+	    		    <option value="Blue 2">Blue 2 (center)</option>
+	    		    <option value="Blue 3">Blue 3 (right)</option>
+	    		</select>
+    		</fieldset>
+    		<fieldset>
+    			<legend>Autonomous</legend>
+	    		Autonomous: <select id="auton"required="true">
+	    		    <option value=""selected="selected" disabled="true">Select auton</option>
+	    		    <option value="Nothing">Nothing</option>
+	    		    <option value="Gears">Gears</option>
+	    		    <option value="Baseline">Baseline</option>
+	    		    <option value="Fuel">Fuel</option>
+	
+	    		</select>
+	    		Gears placed: <input id="auton-gears"type="number"min="0"max="2"value="0">
+	    		
+	    		Balls shot: <input id="auton-balls-shot"type="number"min="0"max="400"value="0">
+	    		Fuel percentage: <input id="auton-balls-percent"type="number"min="0"max="100"value="0">
+    		</fieldset>
+    		<fieldset>
+    			<legend>Teleoperated</legend>
+	    		<fieldset>
+	    			<legend>Gears</legend>
+		    		Gears collected from floor: <input id="gears-from-floor" type="number" min="0" max="20" value="0">
+		    		Gears collected from HP station: <input id="gears-from-hp" type="number" min="0" max="20" value="0">
+		            <br>    		
+		    		Gears dropped by bot: <input id="gears-dropped-bot" type="number" min="0" max="20" value="0">
+		    		Gears dropped by pilots: <input id="gears-dropped-pilot" type="number" min="0" max="20" value="0">
+		    		Gears succesfully delivered: <input id="gears-delivered" type="number" min="0" max="20" value="0">
+	    		</fieldset>
+	    		<fieldset>
+	    			<legend>Fuel</legend>
+		    		Fuel shot: <input id="teleop-balls-shot"type="number"min="0"max="400"value="0">
+		    		Fuel percentage: <input id="teleop-balls-percent"type="number"min="0"max="100"value="0">
+	            </fieldset>
+	           	<fieldset>
+	           		<legend>Defense</legend>
+		            How well does it play defense (Academy scale:) <input id="defense-play-rating" type="number" min="0" max="4"value="0">
+		            How well does it react to defense (Academy scale:) <input id="defense-react-rating" type="number" min="0" max="4"value="0">
+	            </fieldset>
+	            <fieldset>
+	            	<legend>Climbing</legend>
+		            Did it climb? <select id="climbed">
+		                <option selected="true"value="Did not attempt">Did not attempt</option>
+		                <option value="Failed">Did not climb but tryed to</option>
+		                <option value="Did but fouled">Did but fouled</option>
+		                <option value="Did succesfully">Succesfully climbed</option>
+		            </select>
+		            If so, how fast? Leave 0 for didnt climb: <input id="climb-time"type="number"min="0"max="30"value="0">
+	            </fieldset>
+	            Primary focus: <select id="focus" required="true">
+	                <option value=""disabled="true"selected="true"></option>
+	                <option value="Fuel">Fuel</option>
+	                <option value="Gears">Gears</option>
+	                <option value="Defense">Defense</option>
+	                <option value="Puck bot">Puck bot</option>
+	                <option value="Broke down">Broke down</option>
+	            </select>
+            </fieldset>
+            Comments:<input id="notes"type="text">
             <br>
             <br>
     		<input type="submit"value="Submit">
