@@ -147,7 +147,7 @@
 	        output += ",";
 	        output += encodeURIComponent($("#notes").val());
 	        
-	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString(), output);
+	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString() + ".csv", output);
 	    }
 	</script>
 </html>
