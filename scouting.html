@@ -46,7 +46,7 @@
 	    		</select>
 	    		Gears placed: <input id="auton-gears"type="number"min="0"max="2"value="0">
 	    		
-	    		Balls shot: <input id="auton-balls-shot"type="number"min="0"max="400"value="0">
+	    		Balls shot: <input id="auton-balls-shot"type="number"min="0"max="100"value="0">
 	    		Fuel percentage: <input id="auton-balls-percent"type="number"min="0"max="100"value="0">
     		</fieldset>
     		<fieldset>
@@ -73,20 +73,22 @@
 	            <fieldset>
 	            	<legend>Climbing</legend>
 		            Did it climb? <select id="climbed">
-		                <option selected="true"value="Did not attempt">Did not attempt</option>
-		                <option value="Failed">Did not climb but tryed to</option>
-		                <option value="Did but fouled">Did but fouled</option>
-		                <option value="Did succesfully">Succesfully climbed</option>
+		                <option selected="true"value="No Climb">Did not attempt</option>
+		                <option value="Failed">Failed</option>
+		                <option value="Success">Success</option>
 		            </select>
-		            If so, how fast? Leave 0 for didnt climb: <input id="climb-time"type="number"min="0"max="30"value="0">
+		            If so, how fast in seconds? Leave 0 for didnt climb: <input id="climb-time"type="number"min="0"max="30"value="0">
 	            </fieldset>
 	            Primary focus: <select id="focus" required="true">
 	                <option value=""disabled="true"selected="true"></option>
-	                <option value="Fuel">Fuel</option>
-	                <option value="Gears">Gears</option>
-	                <option value="Defense">Defense</option>
-	                <option value="Puck bot">Puck bot</option>
-	                <option value="Broke down">Broke down</option>
+					<option value="NONE">None (broke down or didn't do anything)</option>
+	                <option value="GEARS/DEF">Gears/Defense</option>
+	                <option value="GEARS/FUEL">Gears/Fuel</option>
+	                <option value="FUEL/DEF">Fuel/Defense</option>
+	                <option value="FUEL">Fuel</option>
+	                <option value="GEARS">Gears</option>
+	                <option value="DEF">Defense</option>
+	                <option value="PUCK">Puck bot</option>
 	            </select>
             </fieldset>
             Comments:<input id="notes"type="text">
