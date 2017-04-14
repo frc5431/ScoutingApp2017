@@ -10,10 +10,10 @@
 	</head>
 	<body>
 	    <form onsubmit="onSubmit()">
-    		<h1>5431 Scouting App</h1>
+	    	Name: <input type="text"id="name"required="true"autofocus="true">
     		<fieldset>
     			<legend>Match Info</legend>
-	    		Team Number: <input type="number" id="team-number" required="true" min="1" max="7000" autofocus="true">
+	    		Team Number: <input type="number" id="team-number" required="true" min="1" max="7000">
 	    		Match Number: <input type="number" id="match-number" required="true" min="1" max="200">
 	    		Robot Start: <select id="robot-station"required="true">
 	    		    <option value=""selected="selected" disabled="true">Select station</option>
@@ -90,6 +90,9 @@
 	                <option value="DEF">Defense</option>
 	                <option value="PUCK">Puck bot</option>
 	            </select>
+	            <br>
+	            Blue score: <input id="blue-score"type="number"min="0"max="500"required="true"><br>
+	            Red score: <input id="red-score"type="number"min="0"max="500"required="true"><br>
             </fieldset>
             Comments:<input id="notes"type="text">
             <br>
@@ -163,6 +166,12 @@
 	        output += $("#defense-react-rating").val();
 	        output += ",";
 	        output += encodeURIComponent($("#notes").val());
+	        output += ",";
+	        output += $("#blue-score").val();
+	        output += ",";
+	        output += $("#red-score").val();
+	        output += ",";
+	        output += encodeURIComponent($("#name").val());
 	        
 	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString() + ".csv", output);
 	    }
