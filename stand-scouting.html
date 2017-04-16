@@ -93,7 +93,7 @@
 	            Red score: <input id="red-score"type="number"min="0"max="500"required="true"><br>
 	            Blue score: <input id="blue-score"type="number"min="0"max="500"required="true"><br>
             </fieldset>
-            Comments:<input id="notes"type="text"> Video: <input id="url"type="url">
+            Comments:<input id="notes"type="text"> Driver notes/fouls: <input id="driver-notes"type="text">
             <br>
             <br>
     		<input type="submit"value="Submit">
@@ -172,7 +172,7 @@
 	        output += ",";
 	        output += $("#name").val();
 	        output += ","
-	        output += $("#url").val();
+	        output += $("#driver-notes").val();
 	        
 	        download($("#team-number").val() + "@ match " + $("#match-number").val()+","+new Date().toLocaleTimeString() + ".csv", output);
 	    }

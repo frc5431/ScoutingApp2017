@@ -47,6 +47,15 @@
 	    		    <option value="Baseline">Baseline</option>
 	    		    <option value="Fuel">Fuel</option>
 	    		</select>
+	    		Autonomous Method: <select id="auton-method">
+	    		    <option value=""selected="selected" disabled="true">Select method</option>
+	    		    <option value="NONE">No Autonomous</option>
+	    		    <option value="VISION">Vision</option>
+	    		    <option value="TIME BASED">Time Based</option>
+	    		    <option value="ENCODERS">Encoders</option>
+	    		    <option value="VISION + ENCODERS">Vision and Encoders</option>
+	    		    <option value="SENSOR">Another form of sensor</option>
+	    		</select>
 	    		Crosses Basline: <input id="baseline"type="checkbox">
 	    		Prefered Starting Location:<select id="preferred-start"required="true">
 	    		    <option value=""selected="selected" disabled="true">Select station</option>
@@ -106,6 +115,10 @@
             </fieldset>
             <fieldset style="background-color:#ffff00">
                 Comments:<input id="notes"type="text">
+          		Significant changes made to the bot since unbagging:<input id="changes"type="text">
+          		<br>
+          		Problems that the team has been struggling with:<input id="problems"type="text">
+          		How experienced is the drive team: <input id="drive-team"type="text">
             </fieldset>
             <br>
             <br>
@@ -150,6 +163,8 @@
 	        output += ",";
 	        output += $("#auton").val();
 	        output += ",";
+	        output += $("#auton-method").val();
+	        output += ",";
 	        output += $("#baseline").val();
 	        output += ",";
 	        output += $("#preferred-start").val();
@@ -183,7 +198,13 @@
 	        output += $("#have-rope").val();
 	        output += ",";
 	        output += $("#notes").val();
-	        
+	        output += ",";
+	        output += $("#changes").val();
+	        output += ",";
+	        output += $("#problems").val();
+	        output += ",";
+	        output += $("#drive-team").val();
+	        output += ",";
 	        
 	        download($("#team-number").val() + " pit data - "+new Date().toLocaleTimeString() + ".csv", output);
 	    }
